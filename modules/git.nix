@@ -21,9 +21,9 @@
 	config = lib.mkIf config.git.enable {
 		programs.git = {
 			enable = true;
-			config = {
-				user.name = config.git.userName;
-				user.email = config.git.userEmail;
+			userName = config.git.userName;
+			userEmail = config.git.userEmail;
+			extraConfig = {
 				init.defaultBranch = config.git.defaultBranch;
 			};
 		};
