@@ -73,12 +73,7 @@
     isNormalUser = true;
     description = "Pablo Cruzval";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-		brave
-		gh
-      neovim
-      gnome-tweaks
-    ];
+    # Los paquetes de usuario ahora están en home.nix
   };
 
   home-manager = {
