@@ -1,14 +1,15 @@
 { config, pkgs, lib, ... }:
 
 {
-	# import = [
-		# ./modules/git.nix
-	# ];
+	imports = [
+		./modules/git.nix
+	];
 
 	# Git config
-	# git.enable = true;
-	# git.userName = "PabloCruzval";
-	# git.userEmail = "p.cruzat.valenzuela@gmail.com";
+	git.enable = true;
+	git.userName = "PabloCruzval";
+	git.userEmail = "p.cruzat.valenzuela@gmail.com";
+
 	home.username = "nyx";
 
 	home.homeDirectory = "/home/nyx";
