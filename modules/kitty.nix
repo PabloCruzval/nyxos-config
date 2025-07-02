@@ -13,6 +13,7 @@
         hide_window_decorations = true;
         disable_ligatures = false;
         font_family = "FiraCode Nerd Font";
+        font_size = 14;
         remember_window_size = false;
         initial_window_width = 1920;
         initial_window_height = 1080;
