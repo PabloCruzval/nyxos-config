@@ -55,7 +55,7 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-
+  programs.windowManager.hyprland.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us, latam";
@@ -78,6 +78,7 @@
   programs.zsh.enable = true;
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
+  
   users.users.nyx = {
     shell = pkgs.zsh;
     isNormalUser = true;

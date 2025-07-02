@@ -5,6 +5,7 @@
 		./modules/git.nix
 		./modules/zsh.nix
 		./modules/kitty.nix
+		./modules/hyprland.nix
 	];
 
 	# Git config
@@ -17,6 +18,9 @@
 
 	# Kitty terminal config
 	kitty.enable = true;
+
+	# Hyprland window manager config
+	hyprland.enable = true;
 
 	home.username = "nyx";
 
