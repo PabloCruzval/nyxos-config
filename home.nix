@@ -4,6 +4,7 @@
 	imports = [
 		./modules/git.nix
 		./modules/zsh.nix
+		./modules/kitty.nix
 	];
 
 	# Git config
@@ -14,21 +15,23 @@
 	# Zsh config
 	zsh.enable = true;
 
+	# Kitty terminal config
+	kitty.enable = true;
+
 	home.username = "nyx";
 
 	home.homeDirectory = "/home/nyx";
 
 	home.stateVersion = "25.05"; # Please read the comment before changing.
-
+	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
 		brave
 		gh
 		neovim
 		gnome-tweaks
-		# Agrega aquí más paquetes específicos del usuario
-		# vscode
-		# discord
-		# etc.
+		vscode-fhs
+		discord
+		bitwarden-desktop
 	];
 
 	home.file = {

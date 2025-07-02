@@ -18,6 +18,16 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+  
+  # Keep maximum 10 generations
+  boot.loader.systemd-boot.configurationLimit = 10;
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -65,7 +75,6 @@
     pulse.enable = true;
   };
 
-  programs.zsh.enable = true;
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
   users.users.nyx = {
@@ -76,18 +85,17 @@
     # Los paquetes de usuario ahora están en home.nix
   };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "nyx" = import ./home.nix;
-    };
-  };
+	# Allow unfree packages
+	nixpkgs.config.allowUnfree = true;
+	home-manager = {
+		extraSpecialArgs = { inherit inputs; };
+		users = {
+			"nyx" = import ./home.nix;
+		};
+	};
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+	# Install firefox.
+	programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
     gcc

@@ -9,8 +9,7 @@
 		programs.zsh = {
 			enable = true;
 			enableCompletion = true;
-			autosuggestion.enable = true;
-			syntaxHighlighting.enable = true;
+			# Note: autosuggestion and syntaxHighlighting are now handled as plugins
 			
 			# History configuration
 			history = {
@@ -22,22 +21,17 @@
 				ignoreSpace = true;
 			};
 
-			# Oh My Zsh configuration
-			oh-my-zsh = {
-				enable = true;
-				plugins = [
-					"git"
-					"sudo"
-					"command-not-found"
-				];
-			};
-
 			# Plugins using Home Manager's zsh plugin system
 			plugins = [
 				{
-					name = "powerlevel10k";
-					src = pkgs.zsh-powerlevel10k;
-					file = "share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme";
+					name = "zsh-autosuggestions";
+					src = pkgs.zsh-autosuggestions;
+					file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
+				}
+				{
+					name = "zsh-syntax-highlighting";
+					src = pkgs.zsh-syntax-highlighting;
+					file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
 				}
 				{
 					name = "fzf-tab";
@@ -56,59 +50,37 @@
 				nv = "nvim";
 				ls = "ls -l --color";
 				py = "python";
+				# Git aliases
+				gs = "git status";
+				ga = "git add";
+				gc = "git commit";
+				gp = "git push";
+				gl = "git pull";
+				gd = "git diff";
+				# Utilities
+				ll = "ls -l --color";
+				la = "ls -la --color";
+				c = "clear";
+				# Nixos
+				nyxconf = "sudo nixos-rebuild switch --flake /home/nyx/nixos-config/#nixos";
 			};
 
-			# Environment variables
-			sessionVariables = {
-				BUN_INSTALL = "$HOME/.bun";
-				PNPM_HOME = "/home/nyx/.local/share/pnpm";
-			};
+			# Initialize zoxide and configure powerlevel10k
+			initContent = ''
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+	source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+fi
 
-			# PATH additions
-			localVariables = {
-				PATH = [
-					"/home/nyx/.cargo/bin"
-					"$BUN_INSTALL/bin"
-					"$PNPM_HOME"
-					"$PATH"
-				];
-			};
+# Source powerlevel10k theme
+source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
-			# Custom initialization code
-			initExtra = ''
-				# Enable Powerlevel10k instant prompt
-				if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-					source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-				fi
+# Initialize zoxide
+eval "$(zoxide init zsh)"
 
-				# Custom function
-				clipcat(){
-					cat "$1" | xclip -selection clipboard
-				}
-
-				# Completion styling
-				zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-				zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
-				zstyle ':completion:*' menu no
-				zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-				zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-				# Load p10k config
-				[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-				# Initialize fzf and zoxide
-				eval "$(fzf --zsh)"
-				eval "$(zoxide init --cmd cd zsh)"
-
-				# bun completions
-				[ -s "/home/nyx/.bun/_bun" ] && source "/home/nyx/.bun/_bun"
-
-				# pnpm path setup
-				case ":$PATH:" in
-					*":$PNPM_HOME:"*) ;;
-					*) export PATH="$PNPM_HOME:$PATH" ;;
-				esac
-			'';
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+'';
 		};
 
 		# Install necessary packages
@@ -116,6 +88,8 @@
 			fzf
 			zoxide
 			xclip
+			zsh-powerlevel10k
 		];
+
 	};
 }
