@@ -75,6 +75,7 @@
     pulse.enable = true;
   };
 
+  programs.zsh.enable = true;
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
   users.users.nyx = {
