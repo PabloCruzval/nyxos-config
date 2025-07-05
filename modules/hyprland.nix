@@ -36,7 +36,7 @@
         exec-once = [
           "syncthing"
           "hypridle"
-          "waybar"
+			 "waybar -c ~/nixos-config/modules/styles/waybar.jsonc -s ~/nixos-config/modules/styles/waybar.css"
           "hyprpaper"
         ];
         
@@ -249,7 +249,7 @@
       # Applications mentioned in config
       rofi-wayland       # Application launcher
       waybar             # Status bar
-      dolphin            # File manager
+      kdePackages.dolphin # File manager (Qt 6 version)
       obsidian           # Note taking
       
       # Utilities
@@ -263,9 +263,9 @@
       wireplumber        # Audio server
       
       # Theme/appearance
-      adw-gtk3-theme     # GTK3 theme
+      adw-gtk3           # GTK3 theme
       qt6ct              # Qt6 theme manager
-      kvantum            # Qt theme engine
+      kdePackages.qtstyleplugin-kvantum # Qt theme engine
     ];
   };
 }

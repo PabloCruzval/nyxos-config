@@ -1,0 +1,82 @@
+{
+	// "position": "bottom",
+	"margin": "20 20 0 20",
+	"modules-left": ["hyprland/workspaces","custom/pacman","cpu","hyprland/language"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": ["tray","pulseaudio", "clock"],
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"1": " ",
+			"2": " ",
+			"3": " ",
+			"4": " ",
+			"5": "   ",
+			"6": " ",
+			"7": " ",
+			"8": " ",
+			"9": " ",
+			"10": "   ",
+		},
+
+		"persistent-workspaces": {
+			"HDMI-A-1": [1, 2, 3, 4, 5],
+			"DP-1": [6, 7, 8, 9, 10],
+		}
+	},
+
+	"network": {
+		"interval": 3,
+		"interface": "enp3s0",
+		"format": "{ifname}",
+		"format-ethernet": " {bandwidthDownBytes} |  {bandwidthUpBytes}",
+		"tooltip-format-ethernet": "iframe: {ifname}  ",
+		"max-length": 50
+	},
+
+	"tray" : {
+		"icon-size" : 18,
+		"spacing" : 10,
+	},
+
+	"custom/pacman" : {
+		"format": "{}  ",
+		"interval": 900,                     			// every 1/4 hour
+		"exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",	// # of updates
+		"exec-if": "exit 0",                  			// always run; consider advanced run conditions
+		"on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar", // update system
+		"on-click-middle": "(checkupdates;pacman -Qm | aur vercmp) | wc -l", // update system
+		"signal": 8,
+		"tooltip": false,	
+	},
+
+	"pulseaudio": {
+	   "scroll-step": 5, // %, can be a float
+	   "reverse-scrolling": 1,
+	   "format": "{volume}% {icon} {format_source}",
+	   "format-bluetooth": "{volume}% {icon} {format_source}",
+	   "format-bluetooth-muted": "  {icon} {format_source}",
+	   "format-muted": "  {format_source}",
+	   "format-source": "{volume}% ",
+	   "format-source-muted": "",
+	   "format-icons": {
+	 		 "headphone": "",
+	 		 "hands-free": "󱥋 ",
+			 "headset": "󰋎 ",
+			 "phone": "",
+			 "portable": "", 
+			 "car": "",
+			 "default": [" ", "  ", " "]
+	  },
+	  "on-click": "pavucontrol",
+	  "min-length": 13,
+	},
+
+	"cpu" : {
+		"format" : " {usage}%"
+	},
+	"clock": {
+		"format" : "  {:%I:%M %p}",
+	}
+}

@@ -1,0 +1,127 @@
+@define-color b-text-color rgb (49, 50, 68);
+@define-color w-text-color rgb (124, 129, 140);
+@define-color arch rgb (116, 199, 236);
+@define-color window rgb (249, 226, 175);
+@define-color pulse-audio rgb (243, 139, 168);
+@define-color clock rgb (245, 224, 220);
+@define-color cpu rgb (235, 160, 172);
+@define-color language rgb (243, 139, 168);
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Fira Code Nerd Font;
+    min-height: 20px;
+	 font-size: 15px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces {
+	margin-right: 8px;
+	/* padding: 3px;  */
+	border-radius: 14px;
+	transition: none;
+	background: #313244;
+}
+
+#tray {
+   margin-right: 8px;
+	padding: 7px;
+   border-radius: 14px;
+   transition: none;
+   background: #313244;
+}
+
+#workspaces button {
+    transition: none;
+    color: @b-text-color;
+    background: transparent;
+    padding: 7px;
+}
+
+#workspaces button.persistent {
+    color: #cdd6f4;
+    font-size: 14px;
+}
+
+#workspaces button.active {
+	color: #a6e3a1;
+}
+
+#custom-pacman {
+	border-radius: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: @arch;
+	color: @b-text-color;
+	margin-right: 8px;
+}
+
+#network {
+	border-radius: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: #74c7ec;
+	color: #313244;
+	margin-right: 8px;
+}
+
+#window {
+	border-radius: 14px;
+	padding-left: 8px;
+	padding-right: 8px;
+	background: @window;
+	color: @b-text-color;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#language {
+	border-radius: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: @language;
+	color: @b-text-color;
+	margin-right: 8px;
+}
+
+#pulseaudio {
+	border-radius: 14px;
+	margin-right: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	background: @pulse-audio;
+	color: @b-text-color;
+	font-size: 16px;
+}
+
+#pulseaudio.muted {
+	background-color: #f38ba8;
+}
+
+#cpu {
+	border-radius: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: @cpu;
+	color: @b-text-color;
+	margin-right: 8px;
+}
+
+#clock {
+	border-radius: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: @clock;
+	color: @b-text-color;
+	margin-right: 8px;
+}
