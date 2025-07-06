@@ -35,7 +35,7 @@
         # Startup applications
         exec-once = [
           "hypridle"
-          "waybar -c ~/nixos-config/modules/styles/waybar.jsonc -s ~/nixos-config/modules/styles/waybar.css"
+          "waybar -c /home/nyx/nixos-config/modules/styles/waybar.jsonc -s /home/nyx/nixos-config/modules/styles/waybar.css"
           "hyprpaper"
         ];
         
