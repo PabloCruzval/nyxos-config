@@ -5,7 +5,7 @@
     rofi.enable = lib.mkEnableOption "enable rofi application launcher";
     rofi.theme = lib.mkOption {
       type = lib.types.str;
-      default = "/home/nyx/nixos-config/modules/styles/rofi.rasi";
+      default = "/home/nyx/nixos-config/modules/rofi/rofi.rasi";
       description = "Path to the rofi theme file";
     };
   };

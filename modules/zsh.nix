@@ -48,7 +48,6 @@
 			shellAliases = {
 				apagar = "shutdown 0";
 				nv = "nvim";
-				ls = "ls -l --color";
 				py = "python";
 				# Git aliases
 				gs = "git status";
@@ -58,7 +57,7 @@
 				gl = "git pull";
 				gd = "git diff";
 				# Utilities
-				ll = "ls -l --color";
+				ls = "ls -l --color";
 				la = "ls -la --color";
 				c = "clear";
 				# Nixos

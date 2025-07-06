@@ -5,9 +5,10 @@
 		./modules/git.nix
 		./modules/zsh.nix
 		./modules/kitty.nix
+		./modules/nvim/nvim.nix
 		./modules/hyprland.nix
 		./modules/hyprpaper.nix
-		./modules/rofi.nix
+		./modules/rofi/rofi.nix
 	];
 
 	# Git config
@@ -21,6 +22,9 @@
 	# Kitty terminal config
 	kitty.enable = true;
 
+	# Nvim config
+	neovim.enable = true;
+
 	# Hyprland window manager config
 	hyprland.enable = true;
 
@@ -30,7 +34,7 @@
 
 	# Rofi application launcher config
 	rofi.enable = true;
-	rofi.theme = "/home/nyx/nixos-config/modules/styles/rofi.rasi";
+	rofi.theme = "/home/nyx/nixos-config/modules/rofi/rofi.rasi";
 
 	home.username = "nyx";
 
@@ -42,7 +46,6 @@
 		brave
 		obsidian
 		gh
-		neovim
 		gnome-tweaks
 		vscode-fhs
 		discord

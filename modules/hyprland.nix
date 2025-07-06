@@ -36,7 +36,7 @@
         # Startup applications
         exec-once = [
           "hypridle"
-          "waybar -c /home/nyx/nixos-config/modules/styles/waybar.jsonc -s /home/nyx/nixos-config/modules/styles/waybar.css"
+          "waybar -c /home/nyx/nixos-config/modules/waybar/waybar.jsonc -s /home/nyx/nixos-config/modules/waybar/waybar.css"
           "hyprpaper"
           "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'"
           "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
