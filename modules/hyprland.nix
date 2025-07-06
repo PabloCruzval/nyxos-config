@@ -12,7 +12,7 @@
         # Programs
         "$browser" = "brave";
         "$terminal" = "kitty";
-        "$fileManager" = "dolphin";
+        "$fileManager" = "thunar";
         "$menu" = "rofi -show drun -show-icons";
         
         # Monitors

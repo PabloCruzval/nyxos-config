@@ -8,7 +8,6 @@
 		./modules/hyprland.nix
 		./modules/hyprpaper.nix
 		./modules/rofi.nix
-		./modules/dolphin.nix
 	];
 
 	# Git config
@@ -29,9 +28,6 @@
 	hyprpaper.enable = true;
 	hyprpaper.wallpaper = "/home/nyx/nixos-config/Wallpaper/KanagawaOnePiece.jpg";
 
-	# Dolphin file manager config
-	dolphin.enable = true;
-
 	# Rofi application launcher config
 	rofi.enable = true;
 	rofi.theme = "/home/nyx/nixos-config/modules/styles/rofi.rasi";
@@ -51,6 +47,7 @@
 		vscode-fhs
 		discord
 		bitwarden-desktop
+		xfce.thunar
 	];
 
 	home.file = {

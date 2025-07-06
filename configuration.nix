@@ -153,9 +153,9 @@
   ## Home Manager ##
   ##################
 
-
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    backupFileExtension = "backup";
     users = {
       "nyx" = import ./home.nix;
     };
