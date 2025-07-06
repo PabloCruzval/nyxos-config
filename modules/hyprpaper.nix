@@ -21,9 +21,7 @@
       # Preload wallpaper
       preload = ${config.hyprpaper.wallpaper}
       
-      # Set wallpaper for each monitor
-      wallpaper = HDMI-A-1,${config.hyprpaper.wallpaper}
-      wallpaper = eDP-1,${config.hyprpaper.wallpaper}
+      wallpaper = ,${config.hyprpaper.wallpaper}
       
       # Enable splash screen
       splash = false
