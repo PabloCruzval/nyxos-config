@@ -13,9 +13,13 @@
     acpi               # Información de batería
   ];
 
+  # Configuración específica de monitor para notebook
+  hyprland.monitor = [
+    "eDP-1,1920x1080@60,0x0,1"
+  ];
+
   # Variables de entorno específicas para notebook
   home.sessionVariables = {
-    EDITOR = "nvim";
     # Optimizaciones para batería
     POWERSAVE = "1";
   };

@@ -11,9 +11,13 @@
     nvtop              # Monitor GPU NVIDIA
   ];
 
+  # Configuración específica de monitor para desktop
+  hyprland.monitor = [
+    ",preferred,auto,1"  # Auto-detect monitor resolution and position
+  ];
+
   # Variables de entorno específicas para desktop
   home.sessionVariables = {
-    EDITOR = "nvim";
     # NVIDIA específico
     LIBVA_DRIVER_NAME = "nvidia";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";

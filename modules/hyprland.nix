@@ -3,6 +3,12 @@
 {
   options = {
     hyprland.enable = lib.mkEnableOption "enable hyprland window manager";
+    hyprland.monitor = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ ",preferred,auto,1" ];
+      description = "Monitor configuration for Hyprland";
+      example = [ "eDP-1,1920x1080@60,0x0,1" ];
+    };
   };
 
   config = lib.mkIf config.hyprland.enable {
@@ -14,6 +20,9 @@
         "$terminal" = "kitty";
         "$fileManager" = "thunar";
         "$menu" = "rofi -show drun -show-icons";
+        
+        # Monitor configuration
+        monitor = config.hyprland.monitor;
         
         # Environment variables
         env = [

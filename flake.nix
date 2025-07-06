@@ -12,8 +12,8 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
-      # Configuración para notebook
-      nixos-notebook = nixpkgs.lib.nixosSystem {
+      # Configuración para notebook ASUS
+      nyx-asus = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/notebook.nix
@@ -21,8 +21,8 @@
         ];
       };
       
-      # Configuración para desktop/torre
-      nixos-desktop = nixpkgs.lib.nixosSystem {
+      # Configuración para desktop PC Master Race
+      nyx-pcmasterrace = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/desktop.nix

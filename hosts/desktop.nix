@@ -16,10 +16,7 @@
   ##########################
 
   # NVIDIA específico para desktop (sin gestión de energía)
-  hardware.nvidia = {
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-  };
+  # Se mantiene el valor por defecto (false) del archivo base
 
   ##################
   ## Home Manager ##

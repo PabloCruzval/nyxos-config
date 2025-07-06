@@ -4,14 +4,14 @@ Esta configuración de NixOS está organizada en múltiples perfiles para difere
 
 ## 🖥️ Perfiles Disponibles
 
-### 1. **Notebook** (`nixos-notebook`)
+### 1. **Notebook ASUS** (`nyx-asus`)
 
 - Optimizado para portátiles con NVIDIA
 - Gestión de energía (TLP) y Bluetooth
 - Control de brillo y herramientas de batería
 - NVIDIA con gestión de energía habilitada
 
-### 2. **Desktop/Torre** (`nixos-desktop`)
+### 2. **Desktop PC Master Race** (`nyx-pcmasterrace`)
 
 - Optimizado para computadoras de escritorio
 - NVIDIA con máximo rendimiento (sin gestión de energía)
@@ -28,11 +28,11 @@ Esta configuración de NixOS está organizada en múltiples perfiles para difere
 ### Usando los aliases de zsh (recomendado):
 
 ```bash
-# Para notebook
-nyx-notebook
+# Para notebook ASUS
+nyx-asus
 
-# Para desktop/torre
-nyx-desktop
+# Para desktop PC Master Race
+nyx-pcmasterrace
 
 # Configuración base (fallback)
 nyx-base
@@ -44,11 +44,11 @@ nyx-update
 ### Construir e instalar un perfil específico (manual):
 
 ```bash
-# Para notebook
-sudo nixos-rebuild switch --flake .#nixos-notebook
+# Para notebook ASUS
+sudo nixos-rebuild switch --flake .#nyx-asus
 
-# Para desktop/torre
-sudo nixos-rebuild switch --flake .#nixos-desktop
+# Para desktop PC Master Race
+sudo nixos-rebuild switch --flake .#nyx-pcmasterrace
 
 # Configuración original (fallback)
 sudo nixos-rebuild switch --flake .#nixos
@@ -58,7 +58,7 @@ sudo nixos-rebuild switch --flake .#nixos
 
 ```
 nixos-config/
-├── configuration.nix          # Configuración original (fallback)
+├── configuration.nix         # Configuración original (fallback)
 ├── flake.nix                 # Definición de perfiles
 ├── hosts/
 │   ├── base.nix              # Configuración base del sistema
@@ -69,19 +69,19 @@ nixos-config/
 │   ├── notebook.nix          # Perfil Home Manager notebook
 │   └── desktop.nix           # Perfil Home Manager desktop
 ├── modules/                  # Módulos compartidos
-└── Wallpaper/               # Recursos compartidos
+└── Wallpaper/                # Recursos compartidos
 ```
 
 ## 🔧 Diferencias entre perfiles
 
-### **Notebook**
+### **Notebook ASUS**
 
 - **Sistema**: TLP (gestión de energía), Bluetooth, UPower
 - **NVIDIA**: Gestión de energía habilitada
 - **Paquetes**: Control de brillo, herramientas de batería
 - **Comportamiento**: Suspend al cerrar tapa
 
-### **Desktop**
+### **Desktop PC Master Race**
 
 - **Sistema**: Optimizaciones para gaming
 - **NVIDIA**: Sin gestión de energía (máximo rendimiento)

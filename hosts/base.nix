@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -10,6 +10,7 @@
   ## System Configuration ##
   ##########################
 
+  networking.hostName = lib.mkDefault "nixos"; # hostname por defecto
   system.stateVersion = "25.05";
   nixpkgs.config.allowUnfree = true;
 
@@ -40,8 +41,8 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
+    powerManagement.enable = lib.mkDefault false;
+    powerManagement.finegrained = lib.mkDefault false;
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -147,6 +148,18 @@
     isNormalUser = true;
     description = "Pablo Cruzval";
     extraGroups = [ "networkmanager" "wheel" ];
+  };
+
+  ##################
+  ## Home Manager ##
+  ##################
+
+  home-manager = lib.mkDefault {
+    extraSpecialArgs = { inherit inputs; };
+    backupFileExtension = "backup";
+    users = {
+      "nyx" = import ../profiles/base.nix;
+    };
   };
 
   #####################

@@ -55,7 +55,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = lib.mkDefault "nvim";
   };
 
   programs.home-manager.enable = true;

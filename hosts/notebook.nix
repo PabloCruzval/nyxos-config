@@ -9,7 +9,7 @@
   ## System Configuration ##
   ##########################
 
-  networking.hostName = "nyxos-asus";
+  networking.hostName = "nyx-asus";
 
   ##########################
   ## Notebook Specific    ##
@@ -38,10 +38,7 @@
   services.blueman.enable = true;
 
   # NVIDIA específico para notebook (gestión de energía)
-  hardware.nvidia = {
-    powerManagement.enable = true;
-    powerManagement.finegrained = false;
-  };
+  hardware.nvidia.powerManagement.enable = true;
 
   ##################
   ## Home Manager ##
