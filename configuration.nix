@@ -23,6 +23,7 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+
   ########################
   ## Boot Configuration ##
   ########################
@@ -116,7 +117,6 @@
   programs.zsh.enable = true;
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
-  programs.firefox.enable = true;
 
   ########################
   ## User Configuration ##
