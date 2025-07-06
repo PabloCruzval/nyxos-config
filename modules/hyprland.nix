@@ -73,8 +73,8 @@
           gaps_in = 5;
           gaps_out = 20;
           border_size = 3;
-          "col.active_border" = "rgba(223249ff)";     # Kanagawa WaveBlue
-          "col.inactive_border" = "rgba(1f1f28cc)";   # Kanagawa SumiInk
+          "col.active_border" = "rgba(ffa066ff)";
+          "col.inactive_border" = "rgba(1f1f28cc)";
           resize_on_border = false;
           allow_tearing = false;
           layout = "dwindle";
@@ -155,6 +155,8 @@
         windowrule = [
           "suppressevent maximize, class:.*"
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+          "workspace 2, title:^(.*Brave.*)$"
+          "workspace 3, title:^(.*Visual Studio.*)$"
         ];
         
         # Main modifier
