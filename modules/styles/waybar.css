@@ -1,127 +1,116 @@
-@define-color b-text-color rgb (49, 50, 68);
-@define-color w-text-color rgb (124, 129, 140);
-@define-color arch rgb (116, 199, 236);
-@define-color window rgb (249, 226, 175);
-@define-color pulse-audio rgb (243, 139, 168);
-@define-color clock rgb (245, 224, 220);
-@define-color cpu rgb (235, 160, 172);
-@define-color language rgb (243, 139, 168);
-
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 8px;
     font-family: Fira Code Nerd Font;
-    min-height: 20px;
-	 font-size: 15px;
+    font-size: 14px;
+    min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
+    background: #1f1f28;
+    color: #dcd7ba;
+    border-radius: 12px;
+    margin: 8px;
+    padding: 0 16px;
 }
 
 #workspaces {
-	margin-right: 8px;
-	/* padding: 3px;  */
-	border-radius: 14px;
-	transition: none;
-	background: #313244;
-}
-
-#tray {
-   margin-right: 8px;
-	padding: 7px;
-   border-radius: 14px;
-   transition: none;
-   background: #313244;
+    background: #16161d;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 4px;
 }
 
 #workspaces button {
-    transition: none;
-    color: @b-text-color;
+    color: #54546d;
     background: transparent;
-    padding: 7px;
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin: 0 2px;
+    transition: all 0.3s ease;
 }
 
-#workspaces button.persistent {
-    color: #cdd6f4;
-    font-size: 14px;
+#workspaces button:hover {
+    color: #7e9cd8;
+    background: #2a2a37;
 }
 
 #workspaces button.active {
-	color: #a6e3a1;
-}
-
-#custom-pacman {
-	border-radius: 14px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background: @arch;
-	color: @b-text-color;
-	margin-right: 8px;
-}
-
-#network {
-	border-radius: 14px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background: #74c7ec;
-	color: #313244;
-	margin-right: 8px;
-}
-
-#window {
-	border-radius: 14px;
-	padding-left: 8px;
-	padding-right: 8px;
-	background: @window;
-	color: @b-text-color;
-}
-
-window#waybar.empty #window {
-    background-color: transparent;
+    color: #ffa066;
+    background: #2d2a2e;
 }
 
 #language {
-	border-radius: 14px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background: @language;
-	color: @b-text-color;
-	margin-right: 8px;
+    background: #16161d;
+    color: #7aa89f;
+    padding: 4px 12px;
+    margin: 4px;
+    border-radius: 8px;
+}
+
+#window {
+    color: #c8c093;
+    font-weight: 500;
+    padding: 0 16px;
+}
+
+#tray {
+    background: #16161d;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 4px;
+}
+
+#tray menu {
+    background: #1f1f28;
+    border: 1px solid #54546d;
 }
 
 #pulseaudio {
-	border-radius: 14px;
-	margin-right: 8px;
-	padding-left: 16px;
-	padding-right: 16px;
-	background: @pulse-audio;
-	color: @b-text-color;
-	font-size: 16px;
+    background: #16161d;
+    color: #7e9cd8;
+    padding: 4px 12px;
+    margin: 4px;
+    border-radius: 8px;
 }
 
 #pulseaudio.muted {
-	background-color: #f38ba8;
-}
-
-#cpu {
-	border-radius: 14px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background: @cpu;
-	color: @b-text-color;
-	margin-right: 8px;
+    color: #c34043;
 }
 
 #clock {
-	border-radius: 14px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background: @clock;
-	color: @b-text-color;
-	margin-right: 8px;
+    background: #16161d;
+    color: #e6c384;
+    padding: 4px 12px;
+    margin: 4px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+#battery {
+    background: #16161d;
+		color: #7e9cd8;
+    padding: 4px 12px;
+    margin: 4px;
+    border-radius: 8px;
+	}
+	
+#battery.charging {
+	color: #98bb6c;
+}
+
+#battery.critical {
+    color: #e82424;
+}
+
+#battery.warning {
+    color: #ff9e3b;
+}
+
+#network {
+    background: #16161d;
+    color: #7aa89f;
+    padding: 4px 12px;
+    margin: 4px;
+    border-radius: 8px;
 }
