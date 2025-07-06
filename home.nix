@@ -8,6 +8,7 @@
 		./modules/hyprland.nix
 		./modules/hyprpaper.nix
 		./modules/rofi.nix
+		./modules/dolphin.nix
 	];
 
 	# Git config
@@ -27,6 +28,9 @@
 	# Hyprpaper wallpaper daemon config
 	hyprpaper.enable = true;
 	hyprpaper.wallpaper = "/home/nyx/nixos-config/Wallpaper/KanagawaOnePiece.jpg";
+
+	# Dolphin file manager config
+	dolphin.enable = true;
 
 	# Rofi application launcher config
 	rofi.enable = true;

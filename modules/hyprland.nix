@@ -29,7 +29,8 @@
           "__GLX_VENDOR_LIBRARY_NAME,nvidia"
           "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1"
           "QT_QPA_PLATFORMTHEME,qt6ct"
-          "XDG_MENU_PREFIX,arch-"
+          "GTK_THEME,Adwaita:dark"
+          "QT_STYLE_OVERRIDE,kvantum-dark"
         ];
         
         # Startup applications
@@ -37,13 +38,9 @@
           "hypridle"
           "waybar -c /home/nyx/nixos-config/modules/styles/waybar.jsonc -s /home/nyx/nixos-config/modules/styles/waybar.css"
           "hyprpaper"
-        ];
-        
-        # Theme settings
-        exec = [
-          "gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\""
-          "gsettings set org.gnome.desktop.interface gtk-theme \"adw-gtk3\""
-          "kbuildsycoca6"
+          "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'"
+          "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+          "gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'"
         ];
         
         # Input configuration
@@ -106,30 +103,27 @@
           enabled = true;
           
           bezier = [
-            "easeOutQuint,0.23,1,0.32,1"
-            "easeInOutCubic,0.65,0.05,0.36,1"
-            "linear,0,0,1,1"
-            "almostLinear,0.5,0.5,0.75,1.0"
-            "quick,0.15,0,0.1,1"
+            "wind, 0.05, 0.9, 0.1, 1.05"
+            "winIn, 0.1, 1.1, 0.1, 1.1"
+            "winOut, 0.3, -0.3, 0, 1"
+            "liner, 1, 1, 1, 1"
+            "linear, 0, 0, 1, 1"
+            "easeInOutQuart, 0.76, 0, 0.24, 1"
+            "easeOutQuart, 0.25, 1, 0.5, 1"
+            "easeInOutExpo, 0.87, 0, 0.13, 1"
+            "easeOutExpo, 0.16, 1, 0.3, 1"
+            "overshot, 0.13, 0.99, 0.29, 1.1"
           ];
           
           animation = [
-            "global, 1, 10, default"
-            "border, 1, 5.39, easeOutQuint"
-            "windows, 1, 4.79, easeOutQuint"
-            "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-            "windowsOut, 1, 1.49, linear, popin 87%"
-            "fadeIn, 1, 1.73, almostLinear"
-            "fadeOut, 1, 1.46, almostLinear"
-            "fade, 1, 3.03, quick"
-            "layers, 1, 3.81, easeOutQuint"
-            "layersIn, 1, 4, easeOutQuint, fade"
-            "layersOut, 1, 1.5, linear, fade"
-            "fadeLayersIn, 1, 1.79, almostLinear"
-            "fadeLayersOut, 1, 1.39, almostLinear"
-            "workspaces, 1, 1.94, almostLinear, fade"
-            "workspacesIn, 1, 1.21, almostLinear, fade"
-            "workspacesOut, 1, 1.94, almostLinear, fade"
+            "windows, 1, 2, wind, slide"
+            "windowsIn, 1, 2, winIn, slide"
+            "windowsOut, 1, 1.5, winOut, slide"
+            "border, 1, 1, liner"
+            "borderangle, 1, 30, liner, loop"
+            "fade, 1, 2, linear"
+            "workspaces, 1, 5, wind"
+            "specialWorkspace, 1, 6, wind, slidevert"
           ];
         };
         
@@ -245,9 +239,8 @@
       hypridle           # Idle daemon
       hyprlock           # Lock screen
       
-      # Applications mentioned in config
+      # Essential UI components
       waybar             # Status bar
-      kdePackages.dolphin # File manager (Qt 6 version)
       
       # Utilities
       grim               # Screenshot tool
@@ -261,8 +254,6 @@
       
       # Theme/appearance
       adw-gtk3           # GTK3 theme
-      qt6ct              # Qt6 theme manager
-      kdePackages.qtstyleplugin-kvantum # Qt theme engine
     ];
   };
 }

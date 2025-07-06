@@ -117,6 +117,26 @@
   programs.zsh.enable = true;
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
+  
+  # Theme and appearance
+  programs.dconf.enable = true;
+  services.dbus.enable = true;
+  
+  # XDG Desktop Portal for proper theming
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+  };
+  
+  # Environment variables for dark mode
+  environment.sessionVariables = {
+    GTK_THEME = "Adwaita:dark";
+    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_STYLE_OVERRIDE = "kvantum-dark";
+  };
 
   ########################
   ## User Configuration ##
@@ -155,6 +175,19 @@
     libva-utils
     vulkan-tools
     glxinfo
+    
+    # Theme packages
+    adwaita-icon-theme
+    gnome-themes-extra
+    gtk3
+    gtk4
+    gsettings-desktop-schemas
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
+    libsForQt5.qt5ct
+    qt6ct
+    libsForQt5.qtstyleplugin-kvantum
+    qt6Packages.qtstyleplugin-kvantum
   ];
 
   # Fonts
