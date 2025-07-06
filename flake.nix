@@ -11,12 +11,33 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+    nixosConfigurations = {
+      # Configuración para notebook
+      nixos-notebook = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/notebook.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      
+      # Configuración para desktop/torre
+      nixos-desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/desktop.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      
+      # Mantener la configuración actual como fallback
+      nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
   };
 }

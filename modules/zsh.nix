@@ -60,8 +60,11 @@
 				ls = "ls -l --color";
 				la = "ls -la --color";
 				c = "clear";
-				# Nixos
-				nyxconf = "sudo nixos-rebuild switch --flake /home/nyx/nixos-config/#nixos";
+				# Nixos perfiles
+				nyx-notebook = "sudo nixos-rebuild switch --flake /home/nyx/nixos-config/#nixos-notebook";
+				nyx-desktop = "sudo nixos-rebuild switch --flake /home/nyx/nixos-config/#nixos-desktop";
+				nyx-base = "sudo nixos-rebuild switch --flake /home/nyx/nixos-config/#nixos";
+				nyx-update = "cd /home/nyx/nixos-config && nix flake update";
 			};
 
 			# Initialize zoxide and configure powerlevel10k
