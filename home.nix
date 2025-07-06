@@ -6,6 +6,7 @@
 		./modules/zsh.nix
 		./modules/kitty.nix
 		./modules/hyprland.nix
+		./modules/rofi.nix
 	];
 
 	# Git config
@@ -22,13 +23,9 @@
 	# Hyprland window manager config
 	hyprland.enable = true;
 
-	# programs.rofi = {
-	# 	enable = true;
-	# 	theme = 	# };
-	home.file.".config/rofi/config.rasi".text = ''
-@import "/home/nyx/nixos-config/modules/styles/rofi.rasi"
-
-'';
+	# Rofi application launcher config
+	rofi.enable = true;
+	rofi.theme = "/home/nyx/nixos-config/modules/styles/rofi.rasi";
 
 	home.username = "nyx";
 

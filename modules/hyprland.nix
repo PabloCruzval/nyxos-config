@@ -245,7 +245,6 @@
       hyprpaper          # Wallpaper daemon
       
       # Applications mentioned in config
-      rofi-wayland       # Application launcher
       waybar             # Status bar
       kdePackages.dolphin # File manager (Qt 6 version)
       
