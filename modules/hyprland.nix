@@ -34,9 +34,8 @@
         
         # Startup applications
         exec-once = [
-          "syncthing"
           "hypridle"
-			 "waybar -c ~/nixos-config/modules/styles/waybar.jsonc -s ~/nixos-config/modules/styles/waybar.css"
+          "waybar -c ~/nixos-config/modules/styles/waybar.jsonc -s ~/nixos-config/modules/styles/waybar.css"
           "hyprpaper"
         ];
         
@@ -74,9 +73,8 @@
           gaps_in = 5;
           gaps_out = 20;
           border_size = 3;
-          # Note: Colors need to be defined or imported from colors.conf
-          "col.active_border" = "rgba(33ccffee)";
-          "col.inactive_border" = "rgba(595959aa)";
+          "col.active_border" = "rgba(223249ff)";     # Kanagawa WaveBlue
+          "col.inactive_border" = "rgba(1f1f28cc)";   # Kanagawa SumiInk
           resize_on_border = false;
           allow_tearing = false;
           layout = "dwindle";
@@ -250,7 +248,6 @@
       rofi-wayland       # Application launcher
       waybar             # Status bar
       kdePackages.dolphin # File manager (Qt 6 version)
-      obsidian           # Note taking
       
       # Utilities
       grim               # Screenshot tool

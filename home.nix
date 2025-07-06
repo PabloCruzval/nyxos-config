@@ -30,6 +30,7 @@
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
 		brave
+		obsidian
 		gh
 		neovim
 		gnome-tweaks
