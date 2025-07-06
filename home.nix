@@ -22,6 +22,14 @@
 	# Hyprland window manager config
 	hyprland.enable = true;
 
+	# programs.rofi = {
+	# 	enable = true;
+	# 	theme = 	# };
+	home.file.".config/rofi/config.rasi".text = ''
+@import "/home/nyx/nixos-config/modules/styles/rofi.rasi"
+
+'';
+
 	home.username = "nyx";
 
 	home.homeDirectory = "/home/nyx";

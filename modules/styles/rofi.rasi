@@ -1,0 +1,212 @@
+/*
+ * Kanagawa Theme for Rofi
+ * Inspired by rounded-dark theme structure
+ */
+
+configuration {
+    show-icons: true;
+    display-drun: " ";
+    display-window: " ";
+    display-run: " ";
+    display-ssh: " ";
+    drun-display-format: "{name}";
+    window-format: "{w} · {c} · {t}";
+}
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+
+    bg: #1f1f28;
+    bg-alt: #16161d;
+    fg: #dcd7ba;
+    fg-alt: #727169;
+    
+    background-color: @bg;
+    
+    accent: #ffa066;
+    urgent: #e82424;
+    
+    font: "Fira Code Nerd Font 12";
+}
+
+window {
+    transparency: "real";
+    background-color: @bg;
+    border-radius: 12px;
+    width: 480px;
+    border: 2px;
+    border-color: @bg-alt;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [inputbar, listview];
+    spacing: 12px;
+    padding: 12px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg-alt;
+    border-radius: 8px;
+    padding: 8px 12px;
+    spacing: 8px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent;
+    vertical-align: 0.5;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder-color: @fg-alt;
+    vertical-align: 0.5;
+    placeholder: "Search...";
+    blink: true;
+}
+
+message {
+    background-color: @bg-alt;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 0px 0px 8px 0px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @fg;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 8;
+    cycle: false;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    fixed-height: false;
+    fixed-columns: false;
+    spacing: 4px;
+    padding: 8px 0px 0px 0px;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    border-radius: 8px;
+    padding: 8px;
+    spacing: 8px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element normal.urgent {
+    background-color: @urgent;
+    text-color: @bg;
+}
+
+element normal.active {
+    background-color: @bg-alt;
+    text-color: @accent;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+    text-color: @bg;
+}
+
+element selected.active {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element alternate.urgent {
+    background-color: transparent;
+    text-color: @urgent;
+}
+
+element alternate.active {
+    background-color: transparent;
+    text-color: @accent;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 20px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
+
+/* Mode switcher */
+mode-switcher {
+    background-color: @bg-alt;
+    border-radius: 8px;
+    padding: 4px;
+    spacing: 4px;
+}
+
+button {
+    background-color: transparent;
+    text-color: @fg-alt;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+button selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+/* Scrollbar */
+scrollbar {
+    width: 4px;
+    border: 0;
+    handle-width: 4px;
+    padding: 0;
+    handle-color: @fg-alt;
+}
+
+/* Error message */
+error-message {
+    background-color: @bg;
+    border: 2px;
+    border-color: @urgent;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+textbox error {
+    background-color: @urgent;
+    text-color: @bg;
+    border-radius: 4px;
+    padding: 4px;
+}

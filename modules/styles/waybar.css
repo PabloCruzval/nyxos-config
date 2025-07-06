@@ -30,6 +30,11 @@ window#waybar {
     transition: all 0.3s ease;
 }
 
+#workspaces button.empty {
+		color: #202029;
+		background: transparent;
+}
+
 #workspaces button:hover {
     color: #7e9cd8;
     background: #2a2a37;
