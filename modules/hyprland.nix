@@ -242,7 +242,6 @@
       # Core Hyprland ecosystem
       hypridle           # Idle daemon
       hyprlock           # Lock screen
-      hyprpaper          # Wallpaper daemon
       
       # Applications mentioned in config
       waybar             # Status bar

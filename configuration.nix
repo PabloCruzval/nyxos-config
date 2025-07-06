@@ -86,8 +86,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  #services.displayManager.gdm.enable = true;
+  #services.desktopManager.gnome.enable = true;
 	
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -111,7 +111,9 @@
   programs.zsh.enable = true;
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
-  
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.wayland.enable = true; 
+  programs.hyprland.enable = true;
   users.users.nyx = {
     shell = pkgs.zsh;
     isNormalUser = true;

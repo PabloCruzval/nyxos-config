@@ -6,6 +6,7 @@
 		./modules/zsh.nix
 		./modules/kitty.nix
 		./modules/hyprland.nix
+		./modules/hyprpaper.nix
 		./modules/rofi.nix
 	];
 
@@ -22,6 +23,10 @@
 
 	# Hyprland window manager config
 	hyprland.enable = true;
+
+	# Hyprpaper wallpaper daemon config
+	hyprpaper.enable = true;
+	hyprpaper.wallpaper = "/home/nyx/nixos-config/Wallpaper/KanagawaOnePiece.jpg";
 
 	# Rofi application launcher config
 	rofi.enable = true;
