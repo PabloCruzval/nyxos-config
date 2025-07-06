@@ -85,8 +85,8 @@
     layout = "us, latam";
     variant = "";
   };
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   ####################
   ## Window Manager ##
@@ -157,7 +157,7 @@
     extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
     users = {
-      "nyx" = import ./home.nix;
+      "nyx" = import ./profiles/base.nix;
     };
   };
 

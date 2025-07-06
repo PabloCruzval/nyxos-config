@@ -7,8 +7,7 @@
 
   # Configuración específica para torre/desktop
   home.packages = with pkgs; [
-    # Monitoreo específico para NVIDIA
-    nvtop              # Monitor GPU NVIDIA
+    # Paquetes específicos para desktop si es necesario
   ];
 
   # Configuración específica de monitor para desktop
