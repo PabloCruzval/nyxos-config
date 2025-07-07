@@ -60,8 +60,8 @@ sudo nixos-rebuild switch --flake .#nixos
 nixos-config/
 ├── configuration.nix         # Configuración original (fallback)
 ├── flake.nix                 # Definición de perfiles
-├── hc-desktop.nix           # Hardware configuration para desktop
-├── hc-notebook.nix          # Hardware configuration para notebook
+├── hc-desktop.nix            # Hardware configuration para desktop
+├── hc-notebook.nix           # Hardware configuration para notebook
 ├── hosts/
 │   ├── base.nix              # Configuración base del sistema
 │   ├── notebook.nix          # Configuración específica notebook
