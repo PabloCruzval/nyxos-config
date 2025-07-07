@@ -49,7 +49,7 @@
         # Startup applications
         exec-once = [
           "hypridle"
-          "waybar"
+          "waybar -c /home/nyx/nixos-config/modules/waybar/waybar.jsonc -s /home/nyx/nixos-config/modules/waybar/waybar.css"
           "hyprpaper"
           "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'"
           "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
@@ -254,6 +254,9 @@
       # Core Hyprland ecosystem
       hypridle           # Idle daemon
       hyprlock           # Lock screen
+      
+      # Essential UI components
+      waybar             # Status bar
       
       # Utilities
       grim               # Screenshot tool

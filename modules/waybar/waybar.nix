@@ -35,15 +35,17 @@
 
   config = lib.mkIf config.waybar.enable {
     # Generate waybar configuration
-    home.file.".config/waybar/config".text = builtins.toJSON {
-      margin = lib.mkDefault "20 20 0 20";
-      modules-left = lib.mkDefault ["hyprland/workspaces" "hyprland/language"];
-      modules-center = lib.mkDefault ["hyprland/window"];
-      modules-right = lib.mkDefault ["tray" "pulseaudio" "clock" "battery"];
+    home.file.".config/waybar/config".text = builtins.toJSON ({
+      margin = "20 20 0 20";
+      modules-left = ["hyprland/workspaces" "hyprland/language"];
+      modules-center = ["hyprland/window"];
+      modules-right = ["tray" "pulseaudio" "clock" "battery"];
 
       "hyprland/workspaces" = {
         format = "";
         persistent-workspaces = config.waybar.persistentWorkspaces;
+        disable-scroll = true;
+        all-outputs = true;
       };
 
       "hyprland/language" = {
@@ -87,6 +89,7 @@
       tray = {
         icon-size = 18;
         spacing = 10;
+        show-passive-items = true;
       };
 
       pulseaudio = {
@@ -114,7 +117,7 @@
       clock = {
         format = "  {:%I:%M %p}";
       };
-    } // config.waybar.modules;
+    } // config.waybar.modules);
 
     # Copy CSS file
     home.file.".config/waybar/style.css".source = ./waybar.css;

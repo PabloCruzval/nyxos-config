@@ -30,20 +30,6 @@
     "10, monitor:HDMI-A-1"
   ];
 
-  # Configuración de waybar para desktop (10 workspaces)
-  waybar.persistentWorkspaces = {
-    "1" = [];
-    "2" = [];
-    "3" = [];
-    "4" = [];
-    "5" = [];
-    "6" = [];
-    "7" = [];
-    "8" = [];
-    "9" = [];
-    "10" = [];
-  };
-
   # Variables de entorno específicas para desktop
   home.sessionVariables = {
     # NVIDIA específico

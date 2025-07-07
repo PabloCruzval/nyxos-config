@@ -8,7 +8,6 @@
     ../modules/hyprland.nix
     ../modules/hyprpaper.nix
     ../modules/rofi/rofi.nix
-    ../modules/waybar/waybar.nix
   ];
 
   # Git config
@@ -32,9 +31,6 @@
   # Rofi application launcher config
   rofi.enable = true;
   rofi.theme = "/home/nyx/nixos-config/modules/rofi/rofi.rasi";
-
-  # Waybar status bar config
-  waybar.enable = true;
 
   home.username = "nyx";
   home.homeDirectory = "/home/nyx";
