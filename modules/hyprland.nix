@@ -9,6 +9,16 @@
       description = "Monitor configuration for Hyprland";
       example = [ "eDP-1,1920x1080@60,0x0,1" ];
     };
+    hyprland.workspaceMonitorBindings = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [];
+      description = "Workspace to monitor bindings for multi-monitor setups";
+      example = [
+        "1, monitor:DP-1"
+        "2, monitor:DP-1"
+        "6, monitor:HDMI-A-1"
+      ];
+    };
   };
 
   config = lib.mkIf config.hyprland.enable {
@@ -39,7 +49,7 @@
         # Startup applications
         exec-once = [
           "hypridle"
-          "waybar -c /home/nyx/nixos-config/modules/waybar/waybar.jsonc -s /home/nyx/nixos-config/modules/waybar/waybar.css"
+          "waybar"
           "hyprpaper"
           "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'"
           "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
@@ -156,6 +166,9 @@
           "workspace 3, title:^(.*Visual Studio.*)$"
         ];
         
+        # Workspace-monitor bindings (only if configured)
+        workspace = config.hyprland.workspaceMonitorBindings;
+        
         # Main modifier
         "$mainMod" = "SUPER";
         
@@ -241,9 +254,6 @@
       # Core Hyprland ecosystem
       hypridle           # Idle daemon
       hyprlock           # Lock screen
-      
-      # Essential UI components
-      waybar             # Status bar
       
       # Utilities
       grim               # Screenshot tool

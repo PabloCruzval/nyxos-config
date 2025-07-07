@@ -12,8 +12,37 @@
 
   # Configuración específica de monitor para desktop
   hyprland.monitor = [
-    ",preferred,auto,1"  # Auto-detect monitor resolution and position
+    "DP-1,1920x1080@144,1920x0,1"
+    "HDMI-A-1,1920x1080@60,0x0,1"
   ];
+
+  # Configuración de workspaces por monitor para desktop
+  hyprland.workspaceMonitorBindings = [
+    "1, monitor:DP-1"
+    "2, monitor:DP-1"
+    "3, monitor:DP-1"
+    "4, monitor:DP-1"
+    "5, monitor:DP-1"
+    "6, monitor:HDMI-A-1"
+    "7, monitor:HDMI-A-1"
+    "8, monitor:HDMI-A-1"
+    "9, monitor:HDMI-A-1"
+    "10, monitor:HDMI-A-1"
+  ];
+
+  # Configuración de waybar para desktop (10 workspaces)
+  waybar.persistentWorkspaces = {
+    "1" = [];
+    "2" = [];
+    "3" = [];
+    "4" = [];
+    "5" = [];
+    "6" = [];
+    "7" = [];
+    "8" = [];
+    "9" = [];
+    "10" = [];
+  };
 
   # Variables de entorno específicas para desktop
   home.sessionVariables = {
