@@ -132,6 +132,9 @@
     ];
   };
   
+  # Ensure icon paths are available system-wide
+  environment.pathsToLink = [ "/share/icons" ];
+  
   # Environment variables for dark mode
   environment.sessionVariables = {
     GTK_THEME = "Adwaita:dark";
