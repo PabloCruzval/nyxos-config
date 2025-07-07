@@ -191,7 +191,7 @@
     qt6ct
     libsForQt5.qtstyleplugin-kvantum
     qt6Packages.qtstyleplugin-kvantum
-    bibata-cursors     # Cursor theme
+    bibata-cursors
   ];
 
   # Fonts

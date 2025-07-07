@@ -38,43 +38,9 @@
   
   nixpkgs.config.allowUnfree = true;
   
-  # Cursor theme configuration
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    name = "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
-    size = 24;
-  };
-  
-  # GTK theme configuration
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
-    cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-      size = 24;
-    };
-    gtk3.extraConfig = {
-      gtk-cursor-theme-name = "Bibata-Modern-Classic";
-      gtk-cursor-theme-size = 24;
-    };
-    gtk4.extraConfig = {
-      gtk-cursor-theme-name = "Bibata-Modern-Classic";
-      gtk-cursor-theme-size = 24;
-    };
-  };
-  
   # Paquetes base comunes para ambos perfiles
   home.packages = with pkgs; [
+    syncthing
     neovim
     brave
     obsidian           # Para estudiar - necesario en todos los dispositivos
@@ -91,8 +57,6 @@
 
   home.sessionVariables = {
     EDITOR = lib.mkDefault "nvim";
-    XCURSOR_THEME = "Bibata-Modern-Classic";
-    XCURSOR_SIZE = "24";
   };
 
   programs.home-manager.enable = true;
