@@ -43,13 +43,14 @@
     syncthing
     neovim
     brave
-    obsidian           # Para estudiar - necesario en todos los dispositivos
+    obsidian
     gh
     vscode-fhs
     discord
+    spotify
     bitwarden-desktop
     xfce.thunar
-    htop               # Monitor del sistema - útil en cualquier computador
+    htop
   ];
 
   home.file = {

@@ -1,9 +1,9 @@
 {
   // "position": "bottom",
   "margin": "20 20 0 20",
-  "modules-left": ["hyprland/workspaces","hyprland/language"],
+  "modules-left": ["hyprland/workspaces","clock"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["tray","pulseaudio", "clock", "battery"],
+  "modules-right": ["tray","hyprland/language","pulseaudio", "battery"],
 
   "hyprland/workspaces": {
     "format": "",
