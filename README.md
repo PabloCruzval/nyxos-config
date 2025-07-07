@@ -60,6 +60,8 @@ sudo nixos-rebuild switch --flake .#nixos
 nixos-config/
 ├── configuration.nix         # Configuración original (fallback)
 ├── flake.nix                 # Definición de perfiles
+├── hc-desktop.nix           # Hardware configuration para desktop
+├── hc-notebook.nix          # Hardware configuration para notebook
 ├── hosts/
 │   ├── base.nix              # Configuración base del sistema
 │   ├── notebook.nix          # Configuración específica notebook
@@ -95,20 +97,37 @@ nixos-config/
 
 ## ⚠️ Importante - Configuración de Hardware
 
-**Antes de usar esta configuración, debe reemplazar el archivo `hardware-configuration.nix` con el de su sistema.**
+**Esta configuración utiliza archivos de hardware separados para cada tipo de sistema para evitar conflictos al hacer cambios.**
 
-### Pasos a seguir:
+### Archivos de Hardware:
 
-1. **Elimine** el archivo `hardware-configuration.nix` actual de este repositorio
-2. **Copie** su archivo de hardware desde `/etc/nixos/hardware-configuration.nix`
-3. **Pegue** el archivo en la raíz de este repositorio
+- `hc-desktop.nix`: Configuración de hardware para sistemas desktop
+- `hc-notebook.nix`: Configuración de hardware para sistemas notebook
 
-### ¿Por qué es necesario?
+### Pasos para configurar un nuevo sistema:
 
-El archivo `hardware-configuration.nix` contiene la configuración específica de hardware de su sistema, incluyendo:
+1. **Genere** la configuración de hardware para su sistema:
+
+   ```bash
+   sudo nixos-generate-config --show-hardware-config > hardware-config-temp.nix
+   ```
+
+2. **Copie** el contenido del archivo temporal al archivo correspondiente:
+
+   - Para notebook: copie a `hc-notebook.nix`
+   - Para desktop: copie a `hc-desktop.nix`
+
+3. **Elimine** el archivo temporal:
+   ```bash
+   rm hardware-config-temp.nix
+   ```
+
+### ¿Por qué archivos separados?
+
+Los archivos de configuración de hardware contienen información específica del sistema como:
 
 - Configuración de particiones y puntos de montaje
 - Drivers y módulos del kernel específicos
 - Configuración de red y dispositivos
 
-**Nota:** Este archivo no se incluye en `.gitignore` porque es requerido para que `nixos-rebuild` funcione correctamente.
+Al tener archivos separados, evitamos que los cambios en un equipo afecten la configuración del otro, eliminando errores de configuración cuando se cambia entre diferentes máquinas.

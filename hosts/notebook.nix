@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../hc-notebook.nix
     ./base.nix
   ];
 
