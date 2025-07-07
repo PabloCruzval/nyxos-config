@@ -37,6 +37,27 @@ Configuración básica compatible con cualquier sistema que tenga drivers NVIDIA
 - **Funcionalidades**: Configuración mínima funcional
 - **Uso**: Sistema de respaldo o configuración inicial
 
+## ⚠️ Configuración de Hardware
+
+**Esta configuración requiere archivos de hardware específicos para cada sistema.**
+
+### Configurar un nuevo sistema:
+
+1. **Generar configuración de hardware**:
+
+   ```bash
+   sudo nixos-generate-config --show-hardware-config > hardware-config-temp.nix
+   ```
+
+2. **Copiar al archivo correspondiente**:
+
+   - Notebook: `hc-notebook.nix`
+   - Desktop: `hc-desktop.nix`
+
+3. **Limpiar**: `rm hardware-config-temp.nix`
+
+> **💡 Tip**: Usar archivos separados evita conflictos entre diferentes máquinas.
+
 ## 🚀 Uso
 
 ### Usando los aliases de ZSH (recomendado):
@@ -140,43 +161,6 @@ Esta configuración utiliza módulos modulares de Home Manager que puedes habili
 - ✅ Opciones configurables por perfil
 - ✅ Temas consistentes entre aplicaciones
 - ✅ Soporte para múltiples monitores (desktop)
-
-## ⚠️ Importante - Configuración de Hardware
-
-**Esta configuración utiliza archivos de hardware separados para cada tipo de sistema para evitar conflictos al hacer cambios.**
-
-### Archivos de Hardware:
-
-- `hc-desktop.nix`: Configuración de hardware para sistemas desktop
-- `hc-notebook.nix`: Configuración de hardware para sistemas notebook
-
-### Pasos para configurar un nuevo sistema:
-
-1. **Genere** la configuración de hardware para su sistema:
-
-   ```bash
-   sudo nixos-generate-config --show-hardware-config > hardware-config-temp.nix
-   ```
-
-2. **Copie** el contenido del archivo temporal al archivo correspondiente:
-
-   - Para notebook: copie a `hc-notebook.nix`
-   - Para desktop: copie a `hc-desktop.nix`
-
-3. **Elimine** el archivo temporal:
-   ```bash
-   rm hardware-config-temp.nix
-   ```
-
-### ¿Por qué archivos separados?
-
-Los archivos de configuración de hardware contienen información específica del sistema como:
-
-- Configuración de particiones y puntos de montaje
-- Drivers y módulos del kernel específicos
-- Configuración de red y dispositivos
-
-Al tener archivos separados, evitamos que los cambios en un equipo afecten la configuración del otro, eliminando errores de configuración cuando se cambia entre diferentes máquinas.
 
 ## 🎨 Personalización
 
