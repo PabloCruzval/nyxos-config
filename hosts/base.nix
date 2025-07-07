@@ -137,6 +137,8 @@
     GTK_THEME = "Adwaita:dark";
     QT_QPA_PLATFORMTHEME = "qt5ct";
     QT_STYLE_OVERRIDE = "kvantum-dark";
+    XCURSOR_THEME = "Bibata-Modern-Classic";
+    XCURSOR_SIZE = "24";
   };
 
   ########################
@@ -189,6 +191,7 @@
     qt6ct
     libsForQt5.qtstyleplugin-kvantum
     qt6Packages.qtstyleplugin-kvantum
+    bibata-cursors     # Cursor theme
   ];
 
   # Fonts

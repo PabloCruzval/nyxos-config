@@ -38,6 +38,8 @@
         env = [
           "XCURSOR_SIZE,24"
           "HYPRCURSOR_SIZE,24"
+          "XCURSOR_THEME,Bibata-Modern-Classic"
+          "XCURSOR_PATH,/run/current-system/sw/share/icons:/home/nyx/.nix-profile/share/icons"
           "LIBVA_DRIVER_NAME,nvidia"
           "__GLX_VENDOR_LIBRARY_NAME,nvidia"
           "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1"
@@ -54,6 +56,9 @@
           "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'"
           "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
           "gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'"
+          "gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'"
+          "gsettings set org.gnome.desktop.interface cursor-size 24"
+          "hyprctl setcursor Bibata-Modern-Classic 24"
         ];
         
         # Input configuration
@@ -270,6 +275,7 @@
       
       # Theme/appearance
       adw-gtk3           # GTK3 theme
+      bibata-cursors     # Cursor theme that matches Kanagawa
     ];
   };
 }
