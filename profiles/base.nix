@@ -40,17 +40,21 @@
   
   # Paquetes base comunes para ambos perfiles
   home.packages = with pkgs; [
-    syncthing
+    # Desarrollo y herramientas
     neovim
+    vscode-fhs
+    gh
+    htop
+
+    # Aplicaciones de escritorio
     brave
     obsidian
-    gh
-    vscode-fhs
     discord
     spotify
+    figma-linux
     bitwarden-desktop
     xfce.thunar
-    htop
+    syncthing
   ];
 
   home.file = {

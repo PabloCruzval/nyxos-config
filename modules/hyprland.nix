@@ -260,6 +260,7 @@
       # Core Hyprland ecosystem
       hypridle           # Idle daemon
       hyprlock           # Lock screen
+      pavucontrol
       
       # Essential UI components
       waybar             # Status bar
