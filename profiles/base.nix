@@ -80,11 +80,15 @@
     vscode-fhs
     gh
     htop
+    nodejs
+    docker
+    docker-compose
 
     # Aplicaciones de escritorio
     brave
     obsidian
     discord
+    telegram-desktop
     spotify
     figma-linux
     bitwarden-desktop
