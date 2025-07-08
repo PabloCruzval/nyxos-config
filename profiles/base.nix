@@ -88,6 +88,7 @@
     brave
     obsidian
     discord
+    gimp3
     telegram-desktop
     spotify
     figma-linux

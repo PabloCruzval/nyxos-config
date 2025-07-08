@@ -10,7 +10,7 @@
   ## System Configuration ##
   ##########################
 
-  networking.hostName = "nyx-pcmasterrace";
+  networking.hostName = "nyx-pc";
 
   ##########################
   ## Desktop Specific     ##
