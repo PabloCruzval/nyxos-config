@@ -180,6 +180,7 @@
     libva-utils
     vulkan-tools
     glxinfo
+    efibootmgr
     
     # Theme packages
     adwaita-icon-theme
