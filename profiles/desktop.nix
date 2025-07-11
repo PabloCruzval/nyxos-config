@@ -7,7 +7,6 @@
 
   # Configuración específica para torre/desktop
   home.packages = with pkgs; [
-    # Paquetes específicos para desktop si es necesario
   ];
 
   # Configuración específica de monitor para desktop
