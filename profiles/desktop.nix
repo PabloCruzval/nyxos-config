@@ -7,7 +7,7 @@
 
   # Configuración específica para torre/desktop
   home.packages = with pkgs; [
-		openboard
+		rnote
 		obs-studio
   ];
 
