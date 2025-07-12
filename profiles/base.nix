@@ -14,7 +14,7 @@
   git.enable = true;
   git.userName = "PabloCruzval";
   git.userEmail = "p.cruzat.valenzuela@gmail.com";
-
+  # Gh credentials
   programs.gh = {
 		enable = true;
 		gitCredentialHelper = {
