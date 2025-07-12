@@ -7,7 +7,8 @@
 
   # Configuración específica para torre/desktop
   home.packages = with pkgs; [
-    # Paquetes específicos para desktop si es necesario
+		openboard
+		obs-studio
   ];
 
   # Configuración específica de monitor para desktop

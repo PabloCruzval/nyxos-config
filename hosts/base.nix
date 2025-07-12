@@ -33,10 +33,11 @@
   boot.loader.systemd-boot.configurationLimit = 10;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  ##########################
-  ## NVIDIA Configuration ##
-  ##########################
-
+  ####################################
+  ## NVIDIA Configuration & Drivers ##
+  ####################################
+	
+  # Nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -51,6 +52,9 @@
     enable = true;
     enable32Bit = true;
   };
+
+  # Other Drivers
+  hardware.opentabletdriver.enable = true;
 
   #######################
   ## Networking & Time ##
