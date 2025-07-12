@@ -15,6 +15,14 @@
   git.userName = "PabloCruzval";
   git.userEmail = "p.cruzat.valenzuela@gmail.com";
 
+  programs.gh = {
+		enable = true;
+		gitCredentialHelper = {
+			enable = true;
+			hosts = ["nyx-pc" "nyx-asus"];
+		};
+	};
+
   # Zsh config
   zsh.enable = true;
 
@@ -78,7 +86,6 @@
     # Desarrollo y herramientas
     neovim
     vscode-fhs
-    gh
     htop
     nodejs
     docker

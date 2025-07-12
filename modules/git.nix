@@ -25,7 +25,11 @@
 			userEmail = config.git.userEmail;
 			extraConfig = {
 				init.defaultBranch = config.git.defaultBranch;
+				credential.helper = "!gh auth git-credential";
 			};
+			includes = [
+				{ path = "~/.gitconfig.local"; }
+			];
 		};
 	};
 }
