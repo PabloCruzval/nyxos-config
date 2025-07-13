@@ -9,6 +9,8 @@
   home.packages = with pkgs; [
 		rnote
 		obs-studio
+		sqlite
+    postman
   ];
 
   # Configuración específica de monitor para desktop
