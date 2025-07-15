@@ -65,7 +65,7 @@
 				nyx-pcmasterrace = "sudo nixos-rebuild switch --flake /home/nyx/nixos-config/#nyx-pcmasterrace";
 				nyx-base = "sudo nixos-rebuild switch --flake /home/nyx/nixos-config/#nixos";
 				nyx-update = "cd /home/nyx/nixos-config && nix flake update";
-				npm-dev="nix-shell -p glib --run 'npm run dev'"
+				npm-dev="nix-shell -p glib --run 'npm run dev'";
 			};
 
 			# Initialize zoxide and configure powerlevel10k
