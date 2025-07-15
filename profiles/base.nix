@@ -88,6 +88,7 @@
     vscode-fhs
     htop
     nodejs
+	 pnpm
     docker
     docker-compose
 
