@@ -170,6 +170,8 @@
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
           "workspace 2, title:^(.*Brave.*)$"
           "workspace 3, title:^(.*Visual Studio.*)$"
+			 "workspace 4, title:^(.*Spotify*.*)$"
+			 "workspace 5, title:^(.*Telegram*.*)$"
         ];
         
         # Workspace-monitor bindings (only if configured)
