@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../hc-desktop.nix
     ./base.nix
   ];
 
