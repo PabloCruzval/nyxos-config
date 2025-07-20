@@ -66,6 +66,7 @@
         input = {
           kb_layout = "us,latam";
           kb_options = "caps:escape,grp:alt_shift_toggle";
+			 numlock_by_default = true;
           follow_mouse = 1;
           sensitivity = 0;
           touchpad = {
