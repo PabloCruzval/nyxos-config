@@ -176,6 +176,7 @@
 
   environment.systemPackages = with pkgs; [
     gcc
+    unzip
     git
     vim
     wget
