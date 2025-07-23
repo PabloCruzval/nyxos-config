@@ -28,7 +28,7 @@
         tab_bar_style = "powerline";
         
         # Background opacity
-        background_opacity = "0.85";
+        background_opacity = "0.95";
         
         # Colors - Kanagawa theme
         foreground = "#dcd7ba";
