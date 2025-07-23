@@ -67,7 +67,7 @@
 				nyx-update = "cd /home/nyx/nixos-config && nix flake update";
 				npm-dev="nix-shell -p glib --run 'npm run dev'";
 				
-				ns="nix-shell"
+				ns="nix-shell";
 			};
 
 			# Initialize zoxide and configure powerlevel10k
