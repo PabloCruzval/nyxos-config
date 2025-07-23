@@ -186,6 +186,7 @@
     vulkan-tools
     glxinfo
     efibootmgr
+	 python3
     
     # Theme packages
     adwaita-icon-theme

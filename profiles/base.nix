@@ -91,6 +91,7 @@
 	 pnpm
     docker
     docker-compose
+	 gdb
 
     # Aplicaciones de escritorio
     brave

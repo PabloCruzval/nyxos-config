@@ -172,6 +172,7 @@
           "workspace 2, title:^(.*Brave.*)$"
           "workspace 3, title:^(.*Visual Studio.*)$"
 			 "workspace 4, title:^(.*Spotify*.*)$"
+			 "workspace 4, title:^(.*Discord*.*)$"
 			 "workspace 5, title:^(.*Telegram*.*)$"
         ];
         
