@@ -50,8 +50,8 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    name = "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
+    name = "Afterglow";
+    package = pkgs.afterglow-cursors-recolored;
     size = 24;
   };
   
