@@ -38,7 +38,12 @@
   ####################################
 	
   # Nvidia
+	hardware.graphics = {
+		enable = true;
+	};
+
   services.xserver.videoDrivers = [ "nvidia" ];
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = lib.mkDefault false;
@@ -48,10 +53,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
 
   # Other Drivers
   hardware.opentabletdriver.enable = true;

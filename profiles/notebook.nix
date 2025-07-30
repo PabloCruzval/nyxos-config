@@ -3,6 +3,7 @@
 {
   imports = [
     ./base.nix
+		../modules/jetbrains.nix
   ];
 
   # Configuración específica para notebook

@@ -8,7 +8,6 @@
     ../modules/hyprland.nix
     ../modules/hyprpaper.nix
     ../modules/rofi/rofi.nix
-    ../modules/steam.nix
   ];
 
   # Git config
@@ -105,6 +104,9 @@
     bitwarden-desktop
     xfce.thunar
     syncthing
+
+	 # Games
+	 steam
   ];
 
 
