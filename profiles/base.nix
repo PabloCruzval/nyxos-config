@@ -104,6 +104,9 @@
     bitwarden-desktop
     xfce.thunar
     syncthing
+
+	 # Games
+	 steam
   ];
 
 

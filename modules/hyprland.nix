@@ -268,6 +268,7 @@
       
       # Essential UI components
       waybar             # Status bar
+			pulseaudioFull
       
       # Utilities
       grim               # Screenshot tool
