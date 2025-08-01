@@ -24,12 +24,6 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/home/nyx/HDD" =
-    { device = "/dev/disk/by-uuid/7a0ddb45-0f8c-4862-9080-b5518000a0aa";
-      fsType = "ext4";
-		options = [ "defaults" "uid=1000" "gid=100" "rw" ];
-    };
-
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
