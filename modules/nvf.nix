@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }:
 {
-    programs.nvf = {
+    config.programs.nvf = {
         enable = true;
         settings = {
             vim.theme.enable = true;
@@ -10,4 +10,4 @@
             vim.languages.nix.enable = true;
         };
     };
-}
+} #

@@ -8,9 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, nvf, ... }@inputs: {
     nixosConfigurations = {
       # Configuración para notebook ASUS
       nyx-asus = nixpkgs.lib.nixosSystem {
@@ -18,6 +20,7 @@
         modules = [
           ./hosts/notebook.nix
           inputs.home-manager.nixosModules.default
+          nvf.nixosModules.default
         ];
       };
       
@@ -27,6 +30,7 @@
         modules = [
           ./hosts/desktop.nix
           inputs.home-manager.nixosModules.default
+          nvf.nixosModules.default
         ];
       };
       
@@ -36,6 +40,7 @@
         modules = [
           ./configuration.nix
           inputs.home-manager.nixosModules.default
+          nvf.nixosModules.default
         ];
       };
     };

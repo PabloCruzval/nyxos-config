@@ -4,6 +4,7 @@
   imports = [
     ../modules/git.nix
     ../modules/zsh.nix
+    ../modules/nvf.nix
     ../modules/kitty.nix
     ../modules/hyprland.nix
     ../modules/hyprpaper.nix
