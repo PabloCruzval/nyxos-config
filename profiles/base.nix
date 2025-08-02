@@ -1,14 +1,15 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [
     ../modules/git.nix
     ../modules/zsh.nix
-    ../modules/nvf.nix
+		../modules/nvf.nix
     ../modules/kitty.nix
     ../modules/hyprland.nix
     ../modules/hyprpaper.nix
     ../modules/rofi/rofi.nix
+    inputs.nvf.homeManagerModules.default
   ];
 
   # Git config
@@ -112,7 +113,7 @@
 
 
   home.sessionVariables = {
-    EDITOR = lib.mkDefault "nvim";
+    EDITOR = lib.mkDefault "vim";
     XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE = "24";
   };
