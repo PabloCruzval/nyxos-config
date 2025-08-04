@@ -108,6 +108,9 @@
         lsp = {
           enable = true;
           formatOnSave = true;
+          mappings = {
+            goToDefinition = "<leader>ld";
+          };
         };
         languages = {
           enableDAP = true;
