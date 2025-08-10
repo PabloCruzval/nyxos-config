@@ -1,13 +1,16 @@
-{lib, config, pkgs, ...}:
-
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   options = {
     hyprland.enable = lib.mkEnableOption "enable hyprland window manager";
     hyprland.monitor = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [ ",preferred,auto,1" ];
+      default = [",preferred,auto,1"];
       description = "Monitor configuration for Hyprland";
-      example = [ "eDP-1,1920x1080@60,0x0,1" ];
+      example = ["eDP-1,1920x1080@60,0x0,1"];
     };
     hyprland.workspaceMonitorBindings = lib.mkOption {
       type = lib.types.listOf lib.types.str;
@@ -30,10 +33,10 @@
         "$terminal" = "kitty";
         "$fileManager" = "thunar";
         "$menu" = "rofi -show drun -show-icons";
-        
+
         # Monitor configuration
         monitor = config.hyprland.monitor;
-        
+
         # Environment variables
         env = [
           "XCURSOR_SIZE,24"
@@ -47,7 +50,7 @@
           "GTK_THEME,Adwaita:dark"
           "QT_STYLE_OVERRIDE,kvantum-dark"
         ];
-        
+
         # Startup applications
         exec-once = [
           "hypridle"
@@ -61,55 +64,55 @@
           "hyprctl setcursor Bibata-Modern-Classic 24"
           "syncthing"
         ];
-        
+
         # Input configuration
         input = {
           kb_layout = "us,latam";
           kb_options = "caps:escape,grp:alt_shift_toggle";
-			 numlock_by_default = true;
+          numlock_by_default = true;
           follow_mouse = 1;
           sensitivity = 0;
           touchpad = {
             natural_scroll = false;
           };
         };
-        
+
         # Gestures
         gestures = {
           workspace_swipe = true;
         };
-        
+
         # Per-device config
         device = {
           name = "epic-mouse-v1";
           sensitivity = -0.5;
         };
-        
+
         # General configuration
         general = {
           gaps_in = 5;
-          gaps_out = 20;
-          border_size = 3;
+          gaps_out = 5;
+          border_size = 2;
           "col.active_border" = "rgba(ffa066ff)";
           "col.inactive_border" = "rgba(1f1f28cc)";
           resize_on_border = false;
           allow_tearing = false;
           layout = "dwindle";
         };
-        
+
         # Decoration
         decoration = {
           rounding = 10;
           active_opacity = 1.0;
           inactive_opacity = 1.0;
-          
+
           shadow = {
             enabled = true;
             range = 4;
             render_power = 3;
             color = "rgba(0,0,0,.5)";
           };
-          
+
           blur = {
             enabled = true;
             size = 3;
@@ -117,11 +120,11 @@
             vibrancy = 0.1696;
           };
         };
-        
+
         # Animations
         animations = {
           enabled = true;
-          
+
           bezier = [
             "wind, 0.05, 0.9, 0.1, 1.05"
             "winIn, 0.1, 1.1, 0.1, 1.1"
@@ -134,7 +137,7 @@
             "easeOutExpo, 0.16, 1, 0.3, 1"
             "overshot, 0.13, 0.99, 0.29, 1.1"
           ];
-          
+
           animation = [
             "windows, 1, 2, wind, slide"
             "windowsIn, 1, 2, winIn, slide"
@@ -146,42 +149,42 @@
             "specialWorkspace, 1, 6, wind, slidevert"
           ];
         };
-        
+
         # Dwindle layout
         dwindle = {
           pseudotile = true;
           preserve_split = true;
         };
-        
+
         # Master layout
         master = {
           new_status = "master";
         };
-        
+
         # Misc
         misc = {
           middle_click_paste = false;
           force_default_wallpaper = 0;
           disable_hyprland_logo = true;
         };
-        
+
         # Window rules
         windowrule = [
           "suppressevent maximize, class:.*"
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
           "workspace 2, title:^(.*Brave.*)$"
           "workspace 3, title:^(.*Visual Studio.*)$"
-			 "workspace 4, title:^(.*Spotify*.*)$"
-			 "workspace 4, title:^(.*Discord*.*)$"
-			 "workspace 5, title:^(.*Telegram*.*)$"
+          "workspace 4, title:^(.*Spotify*.*)$"
+          "workspace 4, title:^(.*Discord*.*)$"
+          "workspace 5, title:^(.*Telegram*.*)$"
         ];
-        
+
         # Workspace-monitor bindings (only if configured)
         workspace = config.hyprland.workspaceMonitorBindings;
-        
+
         # Main modifier
         "$mainMod" = "SUPER";
-        
+
         # Key bindings
         bind = [
           # Applications
@@ -197,13 +200,13 @@
           "$mainMod, T, togglesplit,"
           "$mainMod, O, exec, obsidian"
           "$mainMod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy"
-          
+
           # Move focus (vim-like)
           "$mainMod, h, movefocus, l"
           "$mainMod, l, movefocus, r"
           "$mainMod, k, movefocus, u"
           "$mainMod, j, movefocus, d"
-          
+
           # Switch workspaces
           "$mainMod, 1, workspace, 1"
           "$mainMod, 2, workspace, 2"
@@ -215,7 +218,7 @@
           "$mainMod, 8, workspace, 8"
           "$mainMod, 9, workspace, 9"
           "$mainMod, 0, workspace, 10"
-          
+
           # Move active window to workspace
           "$mainMod SHIFT, 1, movetoworkspace, 1"
           "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -227,12 +230,12 @@
           "$mainMod SHIFT, 8, movetoworkspace, 8"
           "$mainMod SHIFT, 9, movetoworkspace, 9"
           "$mainMod SHIFT, 0, movetoworkspace, 10"
-          
+
           # Scroll through workspaces
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
         ];
-        
+
         # Multimedia keys
         bindel = [
           ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
@@ -242,7 +245,7 @@
           ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
           ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
         ];
-        
+
         # Media control
         bindl = [
           ", XF86AudioNext, exec, playerctl next"
@@ -250,7 +253,7 @@
           ", XF86AudioPlay, exec, playerctl play-pause"
           ", XF86AudioPrev, exec, playerctl previous"
         ];
-        
+
         # Mouse bindings
         bindm = [
           "$mainMod, mouse:272, movewindow"
@@ -258,31 +261,31 @@
         ];
       };
     };
-    
+
     # Install essential packages for your Hyprland setup
     home.packages = with pkgs; [
       # Core Hyprland ecosystem
-      hypridle           # Idle daemon
-      hyprlock           # Lock screen
+      hypridle # Idle daemon
+      hyprlock # Lock screen
       pavucontrol
-      
+
       # Essential UI components
-      waybar             # Status bar
-			pulseaudioFull
-      
+      waybar # Status bar
+      pulseaudioFull
+
       # Utilities
-      grim               # Screenshot tool
-      slurp              # Screen area selection
-      wl-clipboard       # Clipboard utilities
-      brightnessctl      # Brightness control
-      playerctl          # Media control
-      
+      grim # Screenshot tool
+      slurp # Screen area selection
+      wl-clipboard # Clipboard utilities
+      brightnessctl # Brightness control
+      playerctl # Media control
+
       # Audio
-      wireplumber        # Audio server
-      
+      wireplumber # Audio server
+
       # Theme/appearance
-      adw-gtk3           # GTK3 theme
-      bibata-cursors     # Cursor theme that matches Kanagawa
+      adw-gtk3 # GTK3 theme
+      bibata-cursors # Cursor theme that matches Kanagawa
     ];
   };
 }

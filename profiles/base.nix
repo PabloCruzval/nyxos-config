@@ -1,10 +1,14 @@
-{ config, pkgs, lib, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   imports = [
     ../modules/git.nix
     ../modules/zsh.nix
-		../modules/nvf.nix
+    ../modules/nvf.nix
     ../modules/kitty.nix
     ../modules/hyprland.nix
     ../modules/hyprpaper.nix
@@ -18,12 +22,12 @@
   git.userEmail = "p.cruzat.valenzuela@gmail.com";
   # Gh credentials
   programs.gh = {
-		enable = true;
-		gitCredentialHelper = {
-			enable = true;
-			hosts = ["nyx-pc" "nyx-asus"];
-		};
-	};
+    enable = true;
+    gitCredentialHelper = {
+      enable = true;
+      hosts = ["nyx-pc" "nyx-asus"];
+    };
+  };
 
   # Zsh config
   zsh.enable = true;
@@ -45,9 +49,9 @@
   home.username = "nyx";
   home.homeDirectory = "/home/nyx";
   home.stateVersion = "25.05"; # Please read the comment before changing.
-  
+
   nixpkgs.config.allowUnfree = true;
-  
+
   # Cursor theme configuration
   home.pointerCursor = {
     gtk.enable = true;
@@ -56,7 +60,7 @@
     package = pkgs.afterglow-cursors-recolored;
     size = 24;
   };
-  
+
   # GTK theme configuration
   gtk = {
     enable = true;
@@ -82,7 +86,7 @@
       gtk-cursor-theme-size = 24;
     };
   };
-  
+
   # Paquetes base comunes para ambos perfiles
   home.packages = with pkgs; [
     # Desarrollo y herramientas
@@ -90,13 +94,15 @@
     vscode-fhs
     htop
     nodejs
-	 pnpm
+    pnpm
+    bun
     docker
     docker-compose
-	 gdb
+    gdb
 
     # Aplicaciones de escritorio
     brave
+    arc-browser
     obsidian
     discord
     gimp3
@@ -107,10 +113,16 @@
     xfce.thunar
     syncthing
 
-	 # Games
-	 steam
-  ];
+    # Games
+    steam
 
+    # Vivado
+    libudev-zero
+    xorg.libXtst
+    xorg.libXrender
+    libxcrypt-legacy
+    ncurses5
+  ];
 
   home.sessionVariables = {
     EDITOR = lib.mkDefault "vim";

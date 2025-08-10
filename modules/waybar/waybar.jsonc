@@ -1,6 +1,6 @@
 {
   // "position": "bottom",
-  "margin": "20 20 0 20",
+  "margin": "5 5 0 5",
   "modules-left": ["hyprland/workspaces","clock"],
   "modules-center": ["hyprland/window"],
   "modules-right": ["tray","hyprland/language","pulseaudio", "battery"],
@@ -42,7 +42,7 @@
       "discharging": ["", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
       "empty": "󰂎",
       "full": "󰁹",
-      "default": "󰁹",
+      "default": "󰁹"
     }
   },
   
@@ -85,6 +85,6 @@
   },
 
   "clock": {
-    "format" : "  {:%I:%M %p}"
+    "format" : "󰅐  {:%I:%M %p}"
   }
 }

@@ -20,7 +20,7 @@ configuration {
     spacing: 0;
 
     bg: #1f1f28;
-    bg-alt: #16161d;
+    bg-alt: #1f1f28;
     fg: #dcd7ba;
     fg-alt: #727169;
     

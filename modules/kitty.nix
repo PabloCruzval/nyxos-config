@@ -75,10 +75,10 @@
         selection_background = "#2d4f67";
         
         # Tabs
-        inactive_tab_background = "#16161d";
+        inactive_tab_background = "#1f1f28";
         active_tab_background = "#1f1f28";
         inactive_tab_foreground = "#727169";
-        tab_bar_margin_color = "#16161d";
+        tab_bar_margin_color = "#1f1f28";
         
         # URL
         url_color = "#7e9cd8";

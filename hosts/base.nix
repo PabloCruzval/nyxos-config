@@ -1,6 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.home-manager.nixosModules.default
   ];
@@ -17,7 +21,7 @@
   ## Nix Settings ##
   ##################
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -36,13 +40,13 @@
   ####################################
   ## NVIDIA Configuration & Drivers ##
   ####################################
-	
-  # Nvidia
-	hardware.graphics = {
-		enable = true;
-	};
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  # Nvidia
+  hardware.graphics = {
+    enable = true;
+  };
+
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -52,7 +56,6 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  
 
   # Other Drivers
   hardware.opentabletdriver.enable = true;
@@ -80,7 +83,7 @@
     LC_TELEPHONE = "es_CL.UTF-8";
     LC_TIME = "es_CL.UTF-8";
   };
-  
+
   ###########################
   ## X11 & Display Manager ##
   ###########################
@@ -122,11 +125,11 @@
   programs.zsh.enable = true;
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
-  
+
   # Theme and appearance
   programs.dconf.enable = true;
   services.dbus.enable = true;
-  
+
   # XDG Desktop Portal for proper theming
   xdg.portal = {
     enable = true;
@@ -135,10 +138,10 @@
       xdg-desktop-portal-gtk
     ];
   };
-  
+
   # Ensure icon paths are available system-wide
-  environment.pathsToLink = [ "/share/icons" ];
-  
+  environment.pathsToLink = ["/share/icons"];
+
   # Environment variables for dark mode
   environment.sessionVariables = {
     GTK_THEME = "Adwaita:dark";
@@ -156,7 +159,7 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "Pablo Cruzval";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   ##################
@@ -164,7 +167,7 @@
   ##################
 
   home-manager = lib.mkDefault {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";
     users = {
       "nyx" = import ../profiles/base.nix;
@@ -187,8 +190,8 @@
     vulkan-tools
     glxinfo
     efibootmgr
-	 python3
-    
+    python3
+
     # Theme packages
     adwaita-icon-theme
     gnome-themes-extra
@@ -207,5 +210,6 @@
   # Fonts
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
+    nerd-fonts.ubuntu-sans
   ];
 }
