@@ -102,7 +102,6 @@
 
     # Aplicaciones de escritorio
     brave
-    arc-browser
     obsidian
     discord
     gimp3
