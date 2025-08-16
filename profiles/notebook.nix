@@ -1,17 +1,20 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./base.nix
-		../modules/jetbrains.nix
+    ../modules/jetbrains.nix
   ];
 
   # Configuración específica para notebook
   home.packages = with pkgs; [
     # Paquetes específicos para notebook
-    brightnessctl      # Control de brillo
-    powertop           # Monitoreo de energía
-    acpi               # Información de batería
+    brightnessctl # Control de brillo
+    powertop # Monitoreo de energía
+    acpi # Información de batería
   ];
 
   # Configuración específica de monitor para notebook
